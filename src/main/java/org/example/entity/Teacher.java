@@ -12,7 +12,6 @@ import javax.persistence.Enumerated;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 public class Teacher extends User {
     private String teacherNumber;

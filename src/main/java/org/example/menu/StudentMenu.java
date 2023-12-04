@@ -48,6 +48,7 @@ public class StudentMenu {
 
 
     public void studentMenu() {
+        // boolean
         while (true) {
             String text = """
                     ************************

@@ -85,7 +85,7 @@ public class EmployeeMenu {
         }
     }
 
-
+    //region student
     private void studentCrud() {
         while (true) {
             switch (selectCrud()) {
@@ -140,17 +140,19 @@ public class EmployeeMenu {
         return new Student(firstName, lastName, userName, password, studentNumber);
     }
 
+    //endregion
+
+
     private void teacherCrud() {
         while (true) {
             switch (selectCrud()) {
-                case 1: {
+                case 1 -> {
                     Teacher teacher = fillTeacher();
                     teacherService.saveOrUpdate(teacher);
                     System.out.println("teacher successfully registered");
-                    break;
 
                 }
-                case 2: {
+                case 2 -> {
                     System.out.println("enter teacher id");
                     Integer id = input();
                     if (teacherService.existsById(id)) {
@@ -159,23 +161,20 @@ public class EmployeeMenu {
                         teacherService.saveOrUpdate(teacher);
                         System.out.println("teacher successfully updated");
                     } else System.out.println("this id does not exist !");
-                    break;
                 }
-                case 3: {
+                case 3 -> {
                     System.out.println("enter teacher id");
                     Integer id = input();
                     if (teacherService.existsById(id)) {
                         teacherService.deleteById(id);
                         System.out.println("teacher successfully deleted");
                     } else System.out.println("this id does not exist !");
-                    break;
                 }
-                case 4:
-                    employeeServices();
-                    break;
-                default:
+                case 4 -> employeeServices();
+                default -> {
                     System.out.println("invalid input ! ");
                     teacherCrud();
+                }
             }
         }
     }

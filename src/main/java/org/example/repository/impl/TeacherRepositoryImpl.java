@@ -8,10 +8,7 @@ import org.example.utill.SecurityContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
-import javax.persistence.criteria.Root;
+
 
 public class TeacherRepositoryImpl extends UserRepositoryImpl<Teacher> implements TeacherRepository {
     public TeacherRepositoryImpl(EntityManager entityManager) {

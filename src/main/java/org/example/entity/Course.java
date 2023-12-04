@@ -12,18 +12,17 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 public class Course extends BaseEntity<Integer> {
     @ToString.Exclude
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Teacher teacher;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Lesson lesson;
     @ToString.Exclude
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course",cascade = CascadeType.ALL)
     private Set<StudentCourse> studentCourses;
-    @Column(columnDefinition = "Boolean default true")
+    @Column(columnDefinition = "Boolean default false")
     private Boolean isPass;
     @Embedded
     private Term term;

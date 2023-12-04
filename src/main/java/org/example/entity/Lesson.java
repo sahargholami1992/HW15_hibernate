@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 public class Lesson extends BaseEntity<Integer> {
     private String title;

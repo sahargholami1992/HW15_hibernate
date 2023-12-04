@@ -3,10 +3,7 @@ package org.example.entity;
 import lombok.*;
 import org.example.base.entity.BaseEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @AllArgsConstructor
@@ -17,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class StudentCourse extends BaseEntity<Integer> {
     @ToString.Exclude
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn
     private Student student;
     @ToString.Exclude
